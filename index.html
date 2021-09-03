@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Heart-Disease-Prediction</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{url_for('static', filename="vendor/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static', filename="css/scrolling-nav.css")}}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Heart Disease Prediction Web App by Harsh Arora and Harshdeep Bhati using ML and Flask</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="https://www.linkedin.com/in/harshdeep-bhati-15a23a168/" target="_blank">Harshdeep Bhati(Linkedin)</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="https://www.linkedin.com/in/harsh-arora-3a8a0a1a8/" target="_blank">Harsh Arora(Linkedin)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div align="center">
+  <section style="background-image: url('{{ url_for('static', filename='img/Doctor.png') }}')">
+      <h1>Enter your details to Predict!!!</h1>
+  <div class="col-md-4 col-md-offset-4">
+
+      <div style="background-color: #7abaff">
+  <form action='/prediction' method="post">
+  <div class="login">
+      <label><b>Age</b></label>
+    <input type="text" class="form-control" name="Age"  placeholder="Enter Age" required="required">
+  </div>
+
+  <div class="login">
+    <label><b>Gender</b></label>
+    <input type="text" class="form-control" name="Sex"  placeholder="Enter Gender" required="required">
+  </div>
+      <div class="login">
+    <label><b>chest pain type (4 values)</b></label>
+    <input type="text" class="form-control" name="CP"  placeholder="Enter chest pain type" required="required">
+  </div>
+      <div class="login">
+          <b>Resting blood pressure</b></label>
+    <input type="text" class="form-control" name="trestbps" placeholder="Enter resting blood pressure" required="required">
+  </div>
+      <div class="login">
+          <label> <b>serum cholestoral in mg/dl</b></label>
+    <input type="text" class="form-control" name="chol"  placeholder="Enter serum cholestoral in mg/dl" required="required">
+  </div>
+      <div class="login">
+          <label><b>fasting blood sugar > 120 mg/dl</b></label>
+    <input type="text" class="form-control" name="fbs" placeholder="Enter fasting blood sugar > 120 mg/dl" required="required">
+  </div>
+      <div class="login">
+          <label><b>resting Electrocardiographic results</b></label>
+    <input type="text" class="form-control" name="restecg"  placeholder="Enter resting electrocardiographic results" required="required">
+  </div>
+      <div class="login">
+          <label><b>maximum heart rate achieved</b></label>
+    <input type="text" class="form-control" name="thalach" placeholder="Enter maximum heart rate achieved" required="required">
+  </div>
+      <div class="login">
+          <label><b>exercise induced angina</b></label>
+    <input type="text" class="form-control" name="exang" placeholder="Enter exercise induced angina" required="required">
+  </div>
+      <div class="login">
+          <label><b>oldpeak</b></label>
+    <input type="text" class="form-control" name="oldpeak" placeholder="Enter oldpeak" required="required">
+  </div>
+      <div class="login">
+          <label><b>the slope of the peak exercise ST segment</b></label>
+    <input type="text" class="form-control" name="slop"  placeholder="Enter slop" required="required">
+  </div>
+      <div class="login">
+          <label><b>number of major vessels (0-3) colored by flourosopy</b></label>
+    <input type="text" class="form-control" name="ca" placeholder="Enter Results" required="required">
+  </div>
+      <div class="login">
+          <label><b>thal: 0 = normal; 1 = fixed defect; 2 = reversable defect</b></label>
+    <input type="text" class="form-control" name="thal" placeholder="Enter thal" required="required">
+  </div>
+      <hr>
+
+  <button type="submit" class="btn btn-primary">Predict</button>
+  </form>
+      </div>
+  </div>
+
+
+      <hr>
+  <h1>{{ prediction_result }}</h1>
+
+</section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{url_for('static', filename="vendor/jquery/jquery.min.js")}}"></script>
+  <script src="{{url_for('static', filename="vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{{url_for('static', filename="vendor/jquery-easing/jquery.easing.min.js")}}"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="{{url_for('static', filename="js/scrolling-nav.js")}}"></script>
+
+</body>
+
+</html>
